@@ -10,5 +10,6 @@ def home(request):
 
 def rev(request):
     text = request.GET['usertext']
-    print(text)
-    return render(request, 'rev.html', {'cont': text[::-1]})
+    count = len(text.split())
+    #print(text)
+    return render(request, 'rev.html', {'original': text, 'cont': text[::-1], 'count': count})
